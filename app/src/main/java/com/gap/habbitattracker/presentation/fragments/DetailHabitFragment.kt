@@ -9,8 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.gap.habbitattracker.databinding.FragmentDetailHabitBinding
 import com.gap.habbitattracker.domain.entities.Habit
-import com.gap.habbitattracker.domain.entities.Priority
-import com.gap.habbitattracker.domain.entities.Type
 import com.gap.habbitattracker.presentation.fragments.viewModels.DetailsHabitViewModel
 
 
@@ -38,21 +36,18 @@ class DetailHabitFragment : Fragment() {
     }
 
     private fun addNewHabit() {
-        val selectedRadioButtonId = binding.rgType.checkedRadioButtonId
-        var selectedText = ""
-        if (selectedRadioButtonId != -1) {
-            val selectedRadioButton = view?.findViewById<RadioButton>(selectedRadioButtonId)
-            selectedText = selectedRadioButton?.text.toString()
-        }
         binding.btnSave.setOnClickListener {
-            viewModel.addNewHabit(Habit(
-                name = binding.etName.text.trim().toString(),
-                description = binding.etDescription.text.trim().toString(),
-                countReady = binding.etCountReady.text.toString().toInt(),
-                period = binding.etCountPeriod.text.toString().toInt(),
-                type = selectedText,
-                priority = binding.spinnerPriority.selectedItem.toString()
-            ))
+            viewModel.addNewHabit(
+                Habit(
+                    name = binding.etName.text.trim().toString(),
+                    description = binding.etDescription.text.trim().toString(),
+                    countReady = binding.etCountReady.text.toString().toInt(),
+                    period = binding.etCountPeriod.text.toString().toInt(),
+                    type = binding.rgType.findViewById<RadioButton>(binding.rgType.checkedRadioButtonId)
+                        .text.toString(),
+                    priority = binding.spinnerPriority.selectedItem.toString()
+                )
+            )
             requireActivity().onBackPressed()
         }
     }
