@@ -19,10 +19,8 @@ class ListHabitFragment : Fragment() {
     private lateinit var adapter: HabitAdapter
 
 
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentListHabitBinding.inflate(inflater, container, false)
         return binding.root
@@ -38,18 +36,12 @@ class ListHabitFragment : Fragment() {
         workWithRecyclerView()
     }
 
-
-
     private fun addNewHabit() {
         binding.addFab.setOnClickListener {
-            requireActivity().supportFragmentManager
-                .beginTransaction()
-                .addToBackStack(null)
+            requireActivity().supportFragmentManager.beginTransaction().addToBackStack(null)
                 .replace(
-                    R.id.main_fragment_container,
-                    DetailHabitFragment()
-                )
-                .commit()
+                    R.id.main_fragment_container, DetailHabitFragment()
+                ).commit()
         }
     }
 

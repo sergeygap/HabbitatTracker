@@ -2,12 +2,10 @@ package com.gap.habbitattracker.data
 
 import com.gap.habbitattracker.domain.HabitRepository
 import com.gap.habbitattracker.domain.entities.Habit
-import com.gap.habbitattracker.domain.entities.Priority
-import com.gap.habbitattracker.domain.entities.Type
 
 object HabitRepositoryImpl: HabitRepository {
 
-     val listHabit = mutableListOf<Habit>().apply {
+     var listHabit = mutableListOf<Habit>().apply {
 //        repeat(10) {
 //            this.add(Habit(
 //                id = it,
@@ -33,11 +31,12 @@ object HabitRepositoryImpl: HabitRepository {
         listHabit.add(habit.copy(id = listHabit.size))
     }
 
-    override suspend fun editHabit(id: Int) {
+    override suspend fun editHabit(habit: Habit) {
+
 
     }
 
-    override suspend fun deleteHabit(habit: Habit) {
+    override suspend fun deleteHabit(id: Int) {
 
     }
 

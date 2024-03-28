@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.gap.habbitattracker.R
 import com.gap.habbitattracker.databinding.FragmentDetailHabitBinding
 import com.gap.habbitattracker.domain.entities.Habit
 import com.gap.habbitattracker.presentation.fragments.viewModels.DetailsHabitViewModel
@@ -29,8 +32,7 @@ class DetailHabitFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val args = arguments
-        if (args == null) {
+        if (arguments == null) {
             addNewHabit()
         }
     }

@@ -17,6 +17,12 @@
     <string name="delete_habit">Удалить привычку</string>
     <string name="save">Сохранить</string>
     <string name="add_your_first_new_habit">Добавьте свою первую привычку</string>
+    <string name="home_screen">Домашний экран</string>
+    <string name="app_info">Информация о приложении</string>
+    <string name="open">Открыть</string>
+    <string name="close">Закрыть</string>
+    <string name="toolbar_title">Будь сильным!</string>
+    <string name="version_1_home_task_4">version 1, home task 4</string>
 
 
     <array name="priority_of_habit">

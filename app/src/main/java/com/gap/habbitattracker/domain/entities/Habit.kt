@@ -10,11 +10,3 @@ data class Habit(
     val period: Int
 )
 
-enum class Priority {
-    LOW, NORMAL, HIGH
-}
-
-enum class Type {
-    USEFUL, NOTUSEFUL
-}
-
